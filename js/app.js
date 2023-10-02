@@ -2,15 +2,21 @@
  * Project 4 - OOP Game App
  * app.js */
 
-//Step 1: Add the event listener to the "Start Game" button
+// Create a new instance of the Game 
+let game;
+
+// Add the event listener to the "Start Game" and "Play Again" button
 const startButton = document.querySelector('#btn__reset');
-const game = new Game();
 
 startButton.addEventListener('click', () => {
+    if (game) {
+        game.resetGame();
+    }
+    game = new Game();
     game.startGame();
 });
 
-//Step 2: Add the event listener to the onscreen keyboard
+// Add the event listener to the onscreen keyboard
 const keyboard = document.querySelector('#qwerty');
 keyboard.addEventListener('click', (event) => {
     if (event.target.tagName === 'BUTTON') {
@@ -18,7 +24,7 @@ keyboard.addEventListener('click', (event) => {
     }
 });
 
-//Step 3: Add the event listener to the physical keyboard
+// Add the event listener to the physical keyboard
 document.addEventListener('keydown', (event) => {
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => {
@@ -27,15 +33,3 @@ document.addEventListener('keydown', (event) => {
         }
     });
 });
-
-//Step 4: Add the event listener to the "Play Again" button
-const playAgainButton = document.querySelector('#btn__reset');
-playAgainButton.addEventListener('click', () => {
-    game.resetGame();
-});
-
-
-
-
-
-

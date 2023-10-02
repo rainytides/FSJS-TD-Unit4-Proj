@@ -2,7 +2,7 @@
  * Project 4 - OOP Game App
  * Game.js */
 
-//Step 1: Create the Game class
+// Create the Game class
 class Game {
     constructor() {
         this.missed = 0;
@@ -16,7 +16,7 @@ class Game {
         this.activePhrase = null;
     }
 
-    //Step 2: Add the startGame() method
+    // Add the startGame() method
     startGame() {
         const overlay = document.querySelector('#overlay');
         overlay.style.display = 'none';
@@ -24,12 +24,12 @@ class Game {
         this.activePhrase.addPhraseToDisplay();
     }
 
-    //Step 3: Add the getRandomPhrase() method
+    // Add the getRandomPhrase() method
     getRandomPhrase() {
         return this.phrases[Math.floor(Math.random() * this.phrases.length)];
     }
 
-    //Step 4: Add the handleInteraction() method
+    // Add the handleInteraction() method
     handleInteraction(button) {
         button.disabled = true;
         if (this.activePhrase.checkLetter(button.textContent)) {
@@ -44,7 +44,7 @@ class Game {
         }
     }
 
-    //Step 5: Add the removeLife() method
+    // Add the removeLife() method
     removeLife() {
         const hearts = document.querySelectorAll('.tries img');
         hearts[this.missed].src = 'images/lostHeart.png';
@@ -54,13 +54,13 @@ class Game {
         }
     }
 
-    //Step 6: Add the checkForWin() method
+    // Add the checkForWin() method
     checkForWin() {
         const hiddenLetters = document.querySelectorAll('.hide');
         return hiddenLetters.length === 0;
     }
 
-    //Step 7: Add the gameOver() method
+    // Add the gameOver() method
     gameOver(gameWon) {
         const overlay = document.querySelector('#overlay');
         const gameOverMessage = document.querySelector('#game-over-message');
@@ -75,7 +75,7 @@ class Game {
         this.resetGame();
     }
 
-    //Step 8: Add the resetGame() method
+    // Add the resetGame() method
     resetGame() {
         const phraseDiv = document.querySelector('#phrase ul');
         const hearts = document.querySelectorAll('.tries img');
@@ -88,7 +88,3 @@ class Game {
         });
     }
 }
-
-
-
-
