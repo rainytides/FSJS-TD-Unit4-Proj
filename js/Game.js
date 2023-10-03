@@ -115,7 +115,7 @@ class Game {
     phraseDiv.innerHTML = '';
     hearts.forEach(heart => {
         heart.src = 'images/liveHeart.png';
-        heart.classList.remove('flashing');  // Stop hearts from flashing
+        heart.classList.remove('flashing');  
     });
     
     keys.forEach(key => {

@@ -5,7 +5,7 @@
 // Create a new instance of the Game 
 let game;
 
-// Add the event listener to the "Start Game" and "Play Again" button
+// Add the event listener to the "Start Game" and "Reset Game" buttons
 const startButton = document.querySelector('#btn__reset');
 
 startButton.addEventListener('click', () => {
