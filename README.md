@@ -2,6 +2,7 @@
 Fourth project for the Treehouse fullstack Javascript tech degree
 
 **Flashing Hearts Indicator
+
 To enhance the user experience and provide a visual cue to players that the game is nearing its end, the heart indicators will start flashing when only two hearts remain. This serves as a subtle prompt to the player, signaling that they are close to losing the game.
 Implementation:
 Heart Indicators: These are represented as images in the DOM. Every time a player makes an incorrect guess, the removeLife method is invoked.
@@ -10,6 +11,7 @@ CSS Animation: The flashing CSS class contains a keyframe animation that toggles
 
 
 **Phrase Reveal on Game Completion and Player Wins
+
 After a game round is completed and the player emerges victorious, the solution phrase is momentarily revealed to the player. This feature acts as a reward mechanism, allowing players to validate their correct guesses.
 Implementation:
 Reveal Mechanism: The method revealPhrase is responsible for displaying the entire phrase. It iterates over each character in the phrase and makes sure it's visible to the player.
