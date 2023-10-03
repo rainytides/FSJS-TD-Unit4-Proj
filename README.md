@@ -15,4 +15,4 @@ After a game round is completed and the player emerges victorious, the solution 
 **Implementation:**  
 - **Reveal Mechanism:** The method revealPhrase is responsible for displaying the entire phrase. It iterates over each character in the phrase and makes sure it's visible to the player.
 - **Game Over Invocation:** In the gameOver method, only when the player has won the game, the revealPhrase method is invoked to display the solution.
-- **Timeout Mechanism:** After revealing the phrase, a setTimeout function is used to wait for 4 seconds before proceeding to reset the game. This ensures that players have ample time to relish their victory and view the complete phrase before the game interface is reset for a new round.
+- **Timeout Mechanism:** After revealing the phrase, a setTimeout function is used to wait for 1 second before proceeding to reset the game. This ensures that players have ample time to relish their victory and view the complete phrase before the game interface is reset for a new round.

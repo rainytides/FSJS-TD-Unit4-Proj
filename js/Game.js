@@ -96,7 +96,7 @@ class Game {
                 gameOverMessage.textContent = 'Congratulations! You won!';
                 overlay.className = 'win';
                 this.resetGame();
-            }, 4000);
+            }, 1000);
         } else {
             // Display the lost message immediately
             overlay.style.display = 'block';
