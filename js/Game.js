@@ -50,16 +50,31 @@ class Game {
         hearts[this.missed].src = 'images/lostHeart.png';
         this.missed += 1;
     
-        // Check if only two hearts are left
+        // Remove flashing from all hearts
+        hearts.forEach(heart => heart.classList.remove('flashing'));
+    
+        // Check if only two hearts are left and make them flash
         if (this.missed === 3) {
             const remainingHearts = document.querySelectorAll('.tries img[src="images/liveHeart.png"]');
-            remainingHearts.forEach(heart => heart.classList.add('flashing'));
+            if (remainingHearts.length === 2) {
+                remainingHearts.forEach(heart => heart.classList.add('flashing'));
+            }
         }
     
+        // Check if only one heart is left and make it flash
+        if (this.missed === 4) {
+            const lastHeart = document.querySelector('.tries img[src="images/liveHeart.png"]');
+            if (lastHeart) {
+                lastHeart.classList.add('flashing');
+            }
+        }
+    
+        // End game if all hearts are lost
         if (this.missed === 5) {
             this.gameOver(false);
         }
     }
+
     // Add the checkForWin() method
     checkForWin() {
         const hiddenLetters = document.querySelectorAll('.hide');
@@ -88,7 +103,7 @@ class Game {
         // Hide the overlay immediately
         overlay.style.display = 'none';
     
-        // Reveal the phrase only if the user won
+        // Reveal the phrase and trigger confetti if the user won
         if (gameWon) {
             this.revealPhrase();
             setTimeout(() => {
@@ -96,15 +111,26 @@ class Game {
                 gameOverMessage.textContent = 'Congratulations! You won!';
                 overlay.className = 'win';
                 this.resetGame();
-            }, 1000);
+                this.triggerConfetti(); // Trigger confetti
+            }, 1700);
         } else {
             // Display the lost message immediately
             overlay.style.display = 'block';
-            gameOverMessage.textContent = 'Sorry, better luck next time!';
+            gameOverMessage.textContent = 'Whoops! Even superheroes need a practice round. Ready to save the day again?';
             overlay.className = 'lose';
             this.resetGame();
         }
     }
+    
+    // Add the triggerConfetti method
+    triggerConfetti() {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    }
+    
     
     // Add the resetGame() method
     resetGame() {
