@@ -129,7 +129,7 @@ class Game {
             this.revealPhrase();
             setTimeout(() => {
                 overlay.style.display = 'block';
-                gameOverMessage.textContent = 'Congratulations! You won!';
+                gameOverMessage.textContent = 'Congratulations! You won!!';
                 overlay.className = 'win';
                 this.resetGame();
                 this.triggerConfetti(); // Trigger confetti
@@ -146,7 +146,7 @@ class Game {
     // Add the triggerConfetti method
     triggerConfetti() {
         confetti({
-            particleCount: 100,
+            particleCount: 250,
             spread: 70,
             origin: { y: 0.6 }
         });
