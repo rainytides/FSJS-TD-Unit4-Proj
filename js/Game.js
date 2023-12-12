@@ -11,7 +11,28 @@ class Game {
             new Phrase('If you can dream it'),
             new Phrase('Aim for the moon'),
             new Phrase('You are your best thing'),
-            new Phrase('To improve is to change')
+            new Phrase('To improve is to change'),
+            new Phrase('Believe and achieve'),
+            new Phrase('Chase your stars'),
+            new Phrase('Dreams shape the future'),
+            new Phrase('Every day is a new adventure'),
+            new Phrase('Find joy in the journey'),
+            new Phrase('Grow through what you go through'),
+            new Phrase('Happiness is homemade'),
+            new Phrase('Journey to joy begins within'),
+            new Phrase('Keep looking up'),
+            new Phrase('Make your own magic'),
+            new Phrase('Never stop exploring'),
+            new Phrase('Opportunities await you'),
+            new Phrase('Positivity is a choice'),
+            new Phrase('Quality over quantity always'),
+            new Phrase('Rise above the storm'),
+            new Phrase('Turn dreams into reality'),
+            new Phrase('Unleash your potential'),
+            new Phrase('Vision without limits'),
+            new Phrase('Expect greatness'),
+            new Phrase('Yes to new adventures'),
+            new Phrase('Zoom in on happiness')
         ];
         this.activePhrase = null;
     }
@@ -108,11 +129,11 @@ class Game {
             this.revealPhrase();
             setTimeout(() => {
                 overlay.style.display = 'block';
-                gameOverMessage.textContent = 'Congratulations! You won!';
+                gameOverMessage.textContent = 'Congratulations! You won!!';
                 overlay.className = 'win';
                 this.resetGame();
                 this.triggerConfetti(); // Trigger confetti
-            }, 1700);
+            }, 1700); // Delay the display of the win message
         } else {
             // Display the lost message immediately
             overlay.style.display = 'block';
@@ -125,7 +146,7 @@ class Game {
     // Add the triggerConfetti method
     triggerConfetti() {
         confetti({
-            particleCount: 100,
+            particleCount: 250,
             spread: 70,
             origin: { y: 0.6 }
         });
