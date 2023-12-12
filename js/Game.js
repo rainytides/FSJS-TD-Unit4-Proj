@@ -133,7 +133,7 @@ class Game {
                 overlay.className = 'win';
                 this.resetGame();
                 this.triggerConfetti(); // Trigger confetti
-            }, 1700);
+            }, 1700); // Delay the display of the win message
         } else {
             // Display the lost message immediately
             overlay.style.display = 'block';
