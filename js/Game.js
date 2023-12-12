@@ -60,6 +60,7 @@ class Game {
             this.gameOver(false);
         }
     }
+
     // Add the checkForWin() method
     checkForWin() {
         const hiddenLetters = document.querySelectorAll('.hide');
