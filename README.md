@@ -16,7 +16,7 @@ This repository contains the fourth project for the Treehouse Full Stack JavaScr
 - **Implementation**:
   - **Reveal Mechanism**: The `revealPhrase` method displays the entire phrase at the end of a winning game.
   - **Game Over Invocation**: In the `gameOver` method, `revealPhrase` is invoked only if the player wins.
-  - **Timeout Mechanism**: A `setTimeout` function ensures the revealed phrase is displayed for 1 second before resetting the game.
+  - **Timeout Mechanism**: A `setTimeout` function ensures the revealed phrase is displayed for 1.7 seconds before resetting the game.
 
 ## Game Play
 - Players guess letters of a hidden phrase using an onscreen keyboard.
